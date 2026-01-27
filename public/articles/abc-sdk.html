@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         .article-content {
@@ -125,7 +125,7 @@
     <nav class="glass-nav compact">
         <div class="logo"><a href="/" style="text-decoration: none; color: inherit;">Mathokkil</a></div>
         <div class="nav-actions">
-            <a href="articles.html" class="btn secondary"><i class="fas fa-arrow-left"></i> Back to Articles</a>
+            <a href="index.html" class="btn secondary"><i class="fas fa-arrow-left"></i> Back to Articles</a>
             <a href="https://www.linkedin.com/in/eldhosembabu" class="btn primary">Contact Me</a>
         </div>
     </nav>
@@ -171,7 +171,8 @@
                             <li><strong>Robust Integration</strong>: Triple-injection strategy ensures compatibility
                                 with complex multi-module and multi-variant projects.</li>
                             <li><strong>Namespace Aware</strong>: Correctly resolves activities even when
-                                <code>applicationId</code> and <code>namespace</code> differ.</li>
+                                <code>applicationId</code> and <code>namespace</code> differ.
+                            </li>
                         </ul>
 
                         <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 2rem 0;">
@@ -327,11 +328,13 @@ ABCManager.setBadgeCount(this, 3, waitUntilAppStop = true)</code></pre>
                                     Project</strong> in Android Studio. Manifest merge results are cached aggressively,
                                 and a clean build is often required after configuration changes.</li>
                             <li><strong>Verify Activity Name</strong>: Ensure <code>ABC_LAUNCH_ACTIVITY</code> is the
-                                <strong>fully qualified</strong> class name.</li>
+                                <strong>fully qualified</strong> class name.
+                            </li>
                             <li><strong>Check Merged Manifest</strong>: Open your merged
                                 <code>AndroidManifest.xml</code> (in <code>build/intermediates/merged_manifest/</code>)
                                 and search for <code>_Alias1</code>. If they are missing, the plugin was not applied
-                                correctly or had a conflict.</li>
+                                correctly or had a conflict.
+                            </li>
                         </ol>
 
                         <h3>Verification</h3>
@@ -373,7 +376,7 @@ ABCManager.setBadgeCount(this, 3, waitUntilAppStop = true)</code></pre>
         <p>&copy; 2026 Eldhose Mathokkil Babu. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
 </body>
 
 </html>

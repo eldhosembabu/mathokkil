@@ -8,6 +8,26 @@
     ],
     "rewrites": [
       {
+        "source": "/aboutme",
+        "destination": "/aboutme.html"
+      },
+      {
+        "source": "/apps",
+        "destination": "/apps.html"
+      },
+      {
+        "source": "/articles",
+        "destination": "/articles.html"
+      },
+      {
+        "source": "/contributions",
+        "destination": "/contributions.html"
+      },
+      {
+        "source": "/article-abc-sdk",
+        "destination": "/article-abc-sdk.html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

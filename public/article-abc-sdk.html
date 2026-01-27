@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Displaying Badge count on Android app icon | Mathokkil</title>
+    <meta name="description" content="ABC SDK - A seamless way to dynamically badge your Android application icon.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        .article-content {
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .article-content h2 {
+            color: var(--text-primary);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .article-content h3 {
+            color: var(--text-primary);
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .article-content ul {
+            list-style-position: inside;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--glass-border);
+            position: relative;
+        }
+
+        .code-block::before {
+            content: attr(data-lang);
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-bottom-left-radius: 8px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            color: #fb7185;
+            /* Rose 400 */
+        }
+
+        pre {
+            margin: 0;
+        }
+
+        pre code {
+            color: #e2e8f0;
+            background: none;
+            padding: 0;
+        }
+
+        details {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.03);
+            transition: background 0.2s;
+        }
+
+        summary:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .details-content {
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <nav class="glass-nav compact">
+        <div class="logo"><a href="/" style="text-decoration: none; color: inherit;">Mathokkil</a></div>
+        <div class="nav-actions">
+            <a href="articles.html" class="btn secondary"><i class="fas fa-arrow-left"></i> Back to Articles</a>
+            <a href="https://www.linkedin.com/in/eldhosembabu" class="btn primary">Contact Me</a>
+        </div>
+    </nav>
+
+    <main class="resume-container">
+        <article class="glass-card resume-paper fade-in">
+            <header class="resume-header">
+                <div style="width: 100%;">
+                    <h1>Displaying Badge count on Android app icon</h1>
+                    <h2 class="gradient-text">ABC SDK (Android Badge Count)</h2>
+                    <div
+                        style="display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                        <span><i class="far fa-calendar"></i> Jan 27, 2026</span>
+                        <span><i class="fas fa-tag"></i> Android SDK</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="resume-body">
+                <section class="main-column" style="width: 100%;">
+                    <div class="article-content">
+                        <p>
+                            The <strong>ABC SDK</strong> provides a seamless way to dynamically badge your Android
+                            application icon with notification counts (e.g., "1", "99", "10+"). It uses a sophisticated
+                            <strong>Activity Alias</strong> mechanism to swap launcher icons on the fly without breaking
+                            the user experience.
+                        </p>
+                        <p>
+                            Unique to this SDK, badged icons are <strong>generated at build time</strong> using your
+                            app's actual launcher icon, ensuring a perfect visual match.
+                        </p>
+
+                        <h2>Features</h2>
+                        <ul>
+                            <li><strong>Build-Time Generation</strong>: Automatically generates badged PNGs from your
+                                app's existing icon during the build process.</li>
+                            <li><strong>Dynamic Badging</strong>: Shows counts from 1 to <code>ABC_MAX_VALUE</code>.
+                            </li>
+                            <li><strong>Overflow Handling</strong>: Automatically shows "MAX+" (e.g., "10+") if the
+                                count exceeds the configured limit.</li>
+                            <li><strong>Adaptive Icon Support</strong>: Generated assets work seamlessly with standard
+                                launcher configurations.</li>
+                            <li><strong>Robust Integration</strong>: Triple-injection strategy ensures compatibility
+                                with complex multi-module and multi-variant projects.</li>
+                            <li><strong>Namespace Aware</strong>: Correctly resolves activities even when
+                                <code>applicationId</code> and <code>namespace</code> differ.</li>
+                        </ul>
+
+                        <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 2rem 0;">
+
+                        <h2>Integration Guide</h2>
+
+                        <h3>1. Add the Gradle Plugin</h3>
+                        <p>The ABC Plugin handles the generation of badged icons and the necessary manifest aliases.</p>
+
+                        <details>
+                            <summary>Groovy DSL (build.gradle)</summary>
+                            <div class="details-content">
+                                <div class="code-block" data-lang="gradle">
+                                    <pre><code>plugins {
+    id 'com.android.application'
+    id 'com.mathokkil.abc-plugin' version '1.1.44'
+}</code></pre>
+                                </div>
+                            </div>
+                        </details>
+
+                        <details open>
+                            <summary>Kotlin DSL (build.gradle.kts)</summary>
+                            <div class="details-content">
+                                <div class="code-block" data-lang="kotlin">
+                                    <pre><code>plugins {
+    id("com.android.application")
+    id("com.mathokkil.abc-plugin") version "1.1.44"
+}</code></pre>
+                                </div>
+                            </div>
+                        </details>
+
+                        <p><em>Note: The plugin provides full <strong>Adaptive Icon</strong> support. It preserves your
+                                layered XML structure (background and foreground) and adds the badge as a third layer on
+                                top. This ensures that launcher effects like parallax and scaling remain intact.</em>
+                        </p>
+
+                        <h3>2. Add the SDK Dependency</h3>
+
+                        <details>
+                            <summary>Groovy DSL</summary>
+                            <div class="details-content">
+                                <div class="code-block" data-lang="gradle">
+                                    <pre><code>dependencies {
+    implementation 'com.mathokkil:android-badge-count:1.1.44'
+}</code></pre>
+                                </div>
+                            </div>
+                        </details>
+
+                        <details open>
+                            <summary>Kotlin DSL</summary>
+                            <div class="details-content">
+                                <div class="code-block" data-lang="kotlin">
+                                    <pre><code>dependencies {
+    implementation("com.mathokkil:android-badge-count:1.1.44")
+}</code></pre>
+                                </div>
+                            </div>
+                        </details>
+
+                        <h3>3. Configure Settings</h3>
+                        <p>In the <code>defaultConfig</code> block of your app's build file, add the required
+                            configuration using <code>manifestPlaceholders</code>.</p>
+
+                        <p><strong>Parameters:</strong></p>
+                        <ul>
+                            <li><code>ABC_LAUNCH_ACTIVITY</code>: The full class name of your main Launcher activity
+                                (e.g., <code>com.example.MainActivity</code>).</li>
+                            <li><code>ABC_MAX_VALUE</code>: The maximum number to display before showing the "+"
+                                overflow (e.g., "10").</li>
+                            <li><code>ABC_ICON</code>: The path to your base launcher icon (e.g.,
+                                "@mipmap/ic_launcher").</li>
+                        </ul>
+
+                        <details>
+                            <summary>Groovy DSL (build.gradle)</summary>
+                            <div class="details-content">
+                                <div class="code-block" data-lang="gradle">
+                                    <pre><code>android {
+    defaultConfig {
+        manifestPlaceholders = [
+            ABC_LAUNCH_ACTIVITY: "com.yourpackagename.MainActivity",
+            ABC_MAX_VALUE: "10",
+            ABC_ICON: "@mipmap/ic_launcher"
+        ]
+    }
+}</code></pre>
+                                </div>
+                            </div>
+                        </details>
+
+                        <details open>
+                            <summary>Kotlin DSL (build.gradle.kts)</summary>
+                            <div class="details-content">
+                                <div class="code-block" data-lang="kotlin">
+                                    <pre><code>android {
+    defaultConfig {
+        manifestPlaceholders["ABC_LAUNCH_ACTIVITY"] = "com.yourpackagename.MainActivity"
+        manifestPlaceholders["ABC_MAX_VALUE"] = "10"
+        manifestPlaceholders["ABC_ICON"] = "@mipmap/ic_launcher"
+        
+        // Alternative syntax:
+        // manifestPlaceholders += mapOf(
+        //     "ABC_LAUNCH_ACTIVITY" to "com.yourpackagename.MainActivity",
+        //     "ABC_MAX_VALUE" to "10",
+        //     "ABC_ICON" to "@mipmap/ic_launcher"
+        // )
+    }
+}</code></pre>
+                                </div>
+                            </div>
+                        </details>
+
+                        <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 2rem 0;">
+
+                        <h2>Usage</h2>
+                        <p>Call <code>ABCManager.setBadgeCount(context, count)</code> whenever you want to update the
+                            badge.</p>
+                        <ul>
+                            <li><code>count <= 0</code>: Clears the badge (Restores original icon).</li>
+                            <li><code>count > 0 && count <= ABC_MAX_VALUE</code>: Shows the number.</li>
+                            <li><code>count > ABC_MAX_VALUE</code>: Shows <code>ABC_MAX_VALUE</code> + <code>+</code>
+                                (e.g., "10+").</li>
+                        </ul>
+
+                        <div class="code-block" data-lang="kotlin">
+                            <pre><code>import com.mathokkil.abc.ABCManager
+
+// Set count to 5
+ABCManager.setBadgeCount(this, 5)
+
+// Clear badge
+ABCManager.setBadgeCount(this, 0)
+
+// Set badge after a delay (e.g., 5 seconds)
+ABCManager.setBadgeCount(this, 8, 5000L)
+
+// Set badge when app goes to background (UI Hidden)
+ABCManager.setBadgeCount(this, 3, waitUntilAppStop = true)</code></pre>
+                        </div>
+
+                        <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 2rem 0;">
+
+                        <h2>Troubleshooting & Best Practices</h2>
+
+                        <h3>"Component class does not exist" Error</h3>
+                        <p>If you see a <code>java.lang.IllegalArgumentException</code> stating that a component does
+                            not exist:</p>
+                        <ol style="margin-left: 1.5rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                            <li><strong>Force Clean</strong>: Run <code>./gradlew clean</code> or <strong>Build > Clean
+                                    Project</strong> in Android Studio. Manifest merge results are cached aggressively,
+                                and a clean build is often required after configuration changes.</li>
+                            <li><strong>Verify Activity Name</strong>: Ensure <code>ABC_LAUNCH_ACTIVITY</code> is the
+                                <strong>fully qualified</strong> class name.</li>
+                            <li><strong>Check Merged Manifest</strong>: Open your merged
+                                <code>AndroidManifest.xml</code> (in <code>build/intermediates/merged_manifest/</code>)
+                                and search for <code>_Alias1</code>. If they are missing, the plugin was not applied
+                                correctly or had a conflict.</li>
+                        </ol>
+
+                        <h3>Verification</h3>
+                        <p>You can verify the active ABC version in your merged manifest by looking for:<br>
+                            <code>&lt;meta-data android:name="com.mathokkil.abc.VERSION" android:value="1.1.44" /&gt;</code>
+                        </p>
+
+                        <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 2rem 0;">
+
+                        <h2>How It Works</h2>
+                        <ol style="margin-left: 1.5rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                            <li><strong>App Build Time</strong>: The <code>com.mathokkil.abc-plugin</code> scans your
+                                project for the icon and launcher configuration.</li>
+                            <li><strong>Asset Generation</strong>: It generates high-resolution badged PNGs for legacy
+                                support and creates layered <strong>Adaptive Icon XMLs</strong> for Android 8+.</li>
+                            <li><strong>Triple Injection</strong>: The plugin injects assets and aliases into your app
+                                through SourceSets, Task Metadata, and direct Overlay injection.</li>
+                            <li><strong>Run Time</strong>: <code>ABCManager</code> enables the specific alias
+                                corresponding to the requested count via <code>PackageManager</code>.</li>
+                        </ol>
+
+                        <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 2rem 0;">
+
+                        <h2>Technical Requirements</h2>
+                        <ul>
+                            <li><strong>Min SDK</strong>: 21</li>
+                            <li><strong>Gradle</strong>: 8.0+</li>
+                            <li><strong>Java</strong>: 17+ (for build process)</li>
+                            <li><strong>Language</strong>: Kotlin / Java</li>
+                        </ul>
+
+                    </div>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Eldhose Mathokkil Babu. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

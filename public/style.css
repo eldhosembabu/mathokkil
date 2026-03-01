@@ -109,6 +109,21 @@ body {
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nav-logo-img {
+    height: 32px;
+    width: 32px;
+}
+
+.hero-logo-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.3));
 }
 
 .nav-actions {

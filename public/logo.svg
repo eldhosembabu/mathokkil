@@ -1,0 +1,20 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <g filter="url(#glow)">
+    <!-- Brackets -->
+    <path d="M22 35 L12 50 L22 65" stroke="url(#logo-gradient)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M78 35 L88 50 L78 65" stroke="url(#logo-gradient)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Stylized M -->
+    <path d="M35 65 V35 L50 50 L65 35 V65" stroke="url(#logo-gradient)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>

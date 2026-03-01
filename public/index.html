@@ -19,100 +19,125 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 4rem 2rem;
         }
 
         .landing-card {
-            max-width: 800px;
+            max-width: 900px;
+            width: 100%;
             text-align: center;
-            padding: 4rem 3rem;
+            padding: 5rem 3rem;
+        }
+
+        .hero-logo-container {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-logo-img {
+            width: 72px;
+            height: 72px;
+            filter: grayscale(1) brightness(2);
+            opacity: 0.9;
         }
 
         .landing-title {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.05em;
         }
 
         .landing-summary {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             color: var(--text-secondary);
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .menu-grid {
-            display: grid;
-            gap: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.25rem;
             width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
+            margin-bottom: 4rem;
         }
 
         .menu-btn {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 1.2rem 1.5rem;
-            background: rgba(255, 255, 255, 0.03);
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background: var(--glass-highlight);
             border: 1px solid var(--glass-border);
-            border-radius: 12px;
+            border-radius: 100px;
+            /* Pill style */
             color: var(--text-primary);
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .menu-btn:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-2px);
-            border-color: var(--accent-primary);
-            box-shadow: 0 10px 20px -10px rgba(56, 189, 248, 0.2);
+            background: #fff;
+            color: #000;
+            transform: translateY(-4px);
+            border-color: #fff;
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.4);
         }
 
         .menu-btn i {
-            color: var(--accent-secondary);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            opacity: 0.8;
         }
 
         .social-row {
-            margin-top: 3rem;
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 2.5rem;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 3rem;
         }
 
         .social-icon {
             color: var(--text-muted);
-            font-size: 1.5rem;
-            transition: color 0.2s;
+            font-size: 1.4rem;
+            transition: all 0.3s;
         }
 
         .social-icon:hover {
-            color: var(--accent-primary);
+            color: #fff;
+            transform: scale(1.1);
         }
 
         /* Responsive Styles */
         @media (max-width: 768px) {
             .landing-card {
-                padding: 2.5rem 1.5rem;
-                width: 95%;
+                padding: 3rem 1.5rem;
             }
 
             .landing-title {
-                font-size: 2rem;
-                margin-bottom: 0.8rem;
+                font-size: 2.75rem;
             }
 
             .landing-summary {
-                font-size: 1rem;
-                margin-bottom: 2rem;
+                font-size: 1.1rem;
+            }
+
+            .menu-grid {
+                flex-direction: column;
+                align-items: center;
             }
 
             .menu-btn {
-                padding: 1rem 1.2rem;
-                font-size: 1rem;
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -123,11 +148,12 @@
     <div class="background-globes">
         <div class="globe globe-1"></div>
         <div class="globe globe-2"></div>
-        <div class="globe globe-3"></div>
     </div>
     <main class="landing-container">
         <article class="glass-card landing-card fade-in">
-            <img src="logo.svg" alt="Mathokkil Logo" class="hero-logo-img">
+            <div class="hero-logo-container">
+                <img src="logo.svg" alt="Mathokkil Logo" class="hero-logo-img">
+            </div>
             <h1 class="landing-title gradient-text">Eldhose Mathokkil Babu</h1>
             <p class="landing-summary">I am a Senior Software Engineer at Google,
                 specializing in mobile development (Android & iOS) with over 15 years of industry experience. As an

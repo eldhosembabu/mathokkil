@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const cvContent = document.getElementById('cv-content');
   const themeToggle = document.getElementById('theme-toggle');
-  const themeText = themeToggle.querySelector('.theme-text');
-  const printBtn = document.getElementById('print-btn');
+  const themeText = themeToggle ? themeToggle.querySelector('.theme-text') : null;
   const metaColorScheme = document.querySelector('meta[name="color-scheme"]');
   const html = document.documentElement;
 
@@ -85,10 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- 3. Print Trigger ---
-  printBtn.addEventListener('click', () => {
-    window.print();
-  });
 
   // --- 4. Selection AI Assistant logic ---
   function handleTextSelection() {

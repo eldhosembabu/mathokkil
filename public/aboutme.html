@@ -2,237 +2,106 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eldhose Mathokkil Babu | Resume</title>
-    <meta name="description"
-        content="Professional Resume of Eldhose Mathokkil Babu - Senior Software Engineer at Google">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/svg+xml" href="logo.svg">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eldhose Mathokkil Babu | Resume</title>
+  <meta name="description" content="Senior Software Engineer & Android Specialist CV - Eldhose Mathokkil Babu">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="aboutme.css">
+
+  <!-- Prevent FOUC (Flash of Unstyled Content) by setting light/dark theme immediately -->
+  <meta name="color-scheme" content="light dark">
+  <script>
+    {
+      const colorScheme = localStorage.getItem("color-scheme");
+      if (colorScheme) {
+        document.querySelector('meta[name="color-scheme"]').content = colorScheme;
+        document.documentElement.setAttribute('data-theme', colorScheme);
+      } else {
+        const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute('data-theme', systemPrefersDark ? 'dark' : 'light');
+      }
+    }
+  </script>
 </head>
 
 <body>
-    <div class="background-globes">
-        <div class="globe globe-1"></div>
-        <div class="globe globe-2"></div>
+  <!-- Background decorations -->
+  <div class="bg-decorations" aria-hidden="true">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Floating Controls -->
+  <header class="floating-header no-print">
+    <div class="controls-wrapper">
+      <a href="/" class="btn btn-secondary" aria-label="Go Home">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="vertical-align: middle;">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+        Home
+      </a>
+      <button id="print-btn" class="btn btn-primary" aria-label="Print or Save Resume as PDF">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="vertical-align: middle;">
+          <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" />
+        </svg>
+        Print / Save PDF
+      </button>
+      <button id="theme-toggle" class="btn btn-secondary" aria-label="Toggle Light and Dark Mode">
+        <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="vertical-align: middle;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.02 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.02 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.02 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.02 0-1.41l-1.06-1.06zm1.06-12.37c-.39-.39-1.02-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.02.39 1.41 0l1.06-1.06c.39-.38.39-1.02 0-1.41zm-12.37 12.37c-.39-.39-1.02-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.02.39 1.41 0l1.06-1.06c.39-.38.39-1.02 0-1.41z" />
+        </svg>
+        <span class="theme-text">Toggle Theme</span>
+      </button>
     </div>
+  </header>
 
-    <!-- Floating Nav for Quick Actions -->
-    <nav class="glass-nav compact">
-        <div class="logo">
-            <a href="/"
-                style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.75rem;">
-                <img src="logo.svg" alt="Mathokkil Logo" class="nav-logo-img">
-                <span>Mathokkil</span>
-            </a>
-        </div>
-        <div class="nav-actions">
-            <a href="#" class="btn secondary" onclick="window.print()"><i class="fas fa-print"></i> Print / PDF</a>
-            <a href="https://www.linkedin.com/in/eldhosembabu" class="btn primary">Contact Me</a>
-        </div>
-    </nav>
+  <!-- Content Container -->
+  <main class="cv-wrapper">
+    <!-- Rendered Markdown Container -->
+    <article id="cv-content" class="markdown-body">
+      <div class="loader">Loading CV content...</div>
+    </article>
+  </main>
 
-    <main class="resume-container">
-        <!-- Resume Paper -->
-        <article class="glass-card resume-paper fade-in">
-            <!-- Header -->
-            <header class="resume-header">
-                <div>
-                    <h1>Eldhose Mathokkil Babu</h1>
-                    <h2 class="gradient-text">Senior Mobile Engineer | iOS & Android Specialist</h2>
-                    <p class="summary-text">
-                        Innovative Senior Software Engineer / Android Platform Specialist with over 16 years of software engineering experience, including 13+ years of dedicated Android application and 3+ years of iOS Development experience.
-                        Strong track record of designing scalable mobile architectures, high-performance background services, and SDKs utilized by millions of applications globally.
-                        Senior Member of the IEEE. Expert in leveraging Generative AI tools to optimize mobile development workflows, accelerate feature delivery, and prototype intelligent on-device mobile features.
-                    </p>
-                </div>
-                <div class="contact-info">
-                    <a href="https://linkedin.com/in/eldhosembabu" class="contact-item">
-                        <i class="fab fa-linkedin"></i> linkedin.com/in/eldhosembabu
-                    </a>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i> Mountain House, CA
-                    </div>
-                </div>
-            </header>
+  <footer class="cv-footer no-print">
+    <p>&copy; 2026 Eldhose Mathokkil Babu. Built dynamically from <a href="CV.md">CV.md</a>.</p>
+  </footer>
 
-            <div class="resume-body">
-                <!-- Left Column (Main Content) -->
-                <section class="main-column">
-                    <!-- Highlights Section -->
-                    <div class="section-block">
-                        <h3 class="section-heading"><i class="fas fa-star"></i> Key Highlights</h3>
-                        <div class="timeline-entry">
-                            <ul>
-                                <li><strong>Google Play Services:</strong> Developed and maintained key modules within Google Play Services, including the Firebase Dynamic Links Module and the GCM module (critical for FCM push messaging).</li>
-                                <li><strong>Firebase SDKs:</strong> Contributed to the modularization, performance optimization, and maintenance of Firebase Cloud Messaging, Firebase Dynamic Links, and Firebase In-App Messaging SDKs used globally.</li>
-                                <li><strong>Goo.gl Service Shutdown:</strong> Led the graceful shutdown of the legendary goo.gl short links service, managing high-volume redirect traffic and publishing the migration path on the <a href="https://developers.googleblog.com/en/google-url-shortener-links-will-no-longer-be-available/" style="color: var(--accent-primary); text-decoration: none;" target="_blank">Google Developers Blog</a>.</li>
-                                <li><strong>eCommerce Leadership:</strong> Modernized and scaled high-volume retail platforms for Macy's and Sephora, leading codebase modularization and transitions to modern architecture patterns (MVVM, Kotlin, Dagger, Retrofit, OkHttp, Fresco).</li>
-                                <li><strong>Telematics SDK:</strong> Engineered the standalone telematics SDK for the Drivewise application, implementing battery-efficient background sensor fusion (accelerometer, gyroscope, GPS) to accurately detect and classify driving events.</li>
-                                <li><strong>Android Badge Count SDK:</strong> Creator of the open-source launcher badge integration library: <a href="http://mathokkil.com/articles/abc-sdk.html" style="color: var(--accent-primary); text-decoration: none;" target="_blank">abc-sdk</a>.</li>
-                                <li><strong>Poker Tracker iOS App:</strong> Developed and published the native SwiftUI game-tracking utility to the <a href="https://apps.apple.com/us/app/the-poker-tracker/id6752974348" style="color: var(--accent-primary); text-decoration: none;" target="_blank">Apple App Store</a>.</li>
-                            </ul>
-                        </div>
-                    </div>
+  <!-- Floating Ask AI Trigger -->
+  <button id="selection-ai-btn" class="selection-ai-btn no-print hidden">✨ Ask AI</button>
 
-                    <div class="section-block">
-                        <h3 class="section-heading"><i class="fas fa-briefcase"></i> Professional Experience</h3>
+  <!-- AI Modal Assistant -->
+  <dialog id="ai-modal" class="ai-modal no-print">
+    <div class="ai-modal-header">
+      <h3>✨ AI Resume Editor</h3>
+      <button id="close-ai-modal" class="close-btn" aria-label="Close">&times;</button>
+    </div>
+    <div class="ai-modal-body">
+      <div class="field-group">
+        <label>Selected Text:</label>
+        <blockquote id="ai-selected-text"></blockquote>
+      </div>
+      <div class="field-group">
+        <label for="ai-instruction">Instructions for AI:</label>
+        <textarea id="ai-instruction" rows="3"
+          placeholder="e.g. Make this sound like a tech lead, shorten it, focus on Kotlin..."></textarea>
+      </div>
+      <button id="ai-copy-prompt-btn" class="btn btn-primary btn-full">Copy AI Prompt</button>
+    </div>
+  </dialog>
 
-                        <div class="timeline-entry">
-                            <div class="entry-header">
-                                <h4>Senior Software Engineer / Android SDK Specialist (SWE III)</h4>
-                                <span class="badge">June 2019 – Present</span>
-                            </div>
-                            <div class="company">Google LLC</div>
-                            <p class="description">Developing core Firebase Mobile SDK and Google Play Services components in Mountain View / Sunnyvale, CA.</p>
-                            <ul>
-                                <li>Owned the design, feature development, performance optimization, and maintenance of Firebase Messaging, Firebase Dynamic Links, and Firebase In-App Messaging SDKs, directly supporting millions of applications globally.</li>
-                                <li>Engineered and maintained multiple client modules within Google Play Services required for supporting Firebase Dynamic Links and Firebase Messaging products, coordinating phased rollouts to ensure stability across billions of Android devices.</li>
-                                <li>Extensive experience in leveraging Generative AI tools to optimize mobile development workflows, accelerate feature delivery, and prototype intelligent on-device mobile features (e.g., AI Agents for daily workflows and automation).</li>
-                            </ul>
-                        </div>
-
-                        <div class="timeline-entry">
-                            <div class="entry-header">
-                                <h4>Lead Android Engineer</h4>
-                                <span class="badge">June 2017 – June 2019</span>
-                            </div>
-                            <div class="company">Macy's</div>
-                            <p class="description">Served as the Technical Lead for the Macy’s Android eCommerce application, defining architectural enhancements and transitioning key modules to Kotlin.</p>
-                            <ul>
-                                <li>Modernized the Macy's Android app architecture and led the end-to-end build, automation, and release process.</li>
-                                <li>Coordinated deliverables between onsite and offshore teams, ensuring high-quality standards.</li>
-                                <li>Conducted requirement analysis, estimation, and provided robust technical solutions for the Android domain team.</li>
-                            </ul>
-                        </div>
-
-                        <div class="timeline-entry">
-                            <div class="entry-header">
-                                <h4>Technical Android Consultant</h4>
-                                <span class="badge">Feb 2016 – June 2017</span>
-                            </div>
-                            <div class="company">Litmus7 Systems Consulting Inc.</div>
-                            <p class="description">Consultant for the Sephora Android application.</p>
-                            <ul>
-                                <li>Led the offshore engineering team in developing and delivering high-quality retail features for the flagship Sephora Android application.</li>
-                                <li>Provided technical architecture, requirements review, and guidance for high-quality feature implementation.</li>
-                            </ul>
-                        </div>
-
-                        <div class="timeline-entry">
-                            <div class="entry-header">
-                                <h4>Android Technical Lead / IT Analyst</h4>
-                                <span class="badge">Jan 2012 – Feb 2016</span>
-                            </div>
-                            <div class="company">Tata Consultancy Services (TCS)</div>
-                            <p class="description">Worked on telematics (Drivewise for Allstate) and enterprise solutions.</p>
-                            <ul>
-                                <li>Architected and developed the Drivewise Telematics SDK for Allstate Insurance, a standalone SDK capable of motion detection, sensor fusion (accelerometer, gyroscope, GPS), and event tracking (hard braking, speeding, cornering).</li>
-                                <li>Designed highly optimized background services utilizing Android AlarmManager and custom low-power location polling strategies, minimizing battery drainage during driving events.</li>
-                                <li>Engineered internal mobile tools including TCS Communicator (secure mobile email client) and Event Maestro (enterprise event app).</li>
-                            </ul>
-                        </div>
-
-                        <div class="timeline-entry">
-                            <div class="entry-header">
-                                <h4>Software Engineer (Android & .NET)</h4>
-                                <span class="badge">Nov 2009 – Dec 2011</span>
-                            </div>
-                            <div class="company">Orion</div>
-                            <p class="description">Developed Android applications and Microsoft server-side/auditing software.</p>
-                            <ul>
-                                <li>Worked on the desktop and web version of the KPMG Auditing app (eAudIT) powered by Microsoft technologies like WPF, WCF, Silverlight.</li>
-                                <li>Developed Grocerease, a proof-of-concept (POC) eCommerce app in Android with a WCF web services backend.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Right Column (Sidebar) -->
-                <aside class="sidebar-column">
-                    <div class="section-block">
-                        <h3 class="section-heading"><i class="fas fa-code"></i> Technical Skills</h3>
-                        <div class="skills-wrapper">
-                            <span class="skill-pill">Kotlin / Java</span>
-                            <span class="skill-pill">Swift / SwiftUI</span>
-                            <span class="skill-pill">Jetpack Compose</span>
-                            <span class="skill-pill">MVVM / MVI</span>
-                            <span class="skill-pill">Dagger / Hilt</span>
-                            <span class="skill-pill">Coroutines / Flow</span>
-                            <span class="skill-pill">Firebase Suite</span>
-                            <span class="skill-pill">Google Play Services</span>
-                            <span class="skill-pill">Generative AI / LLMs</span>
-                            <span class="skill-pill">System Design</span>
-                            <span class="skill-pill">Android SDK</span>
-                            <span class="skill-pill">iOS SDK</span>
-                            <span class="skill-pill">JUnit / Espresso</span>
-                            <span class="skill-pill">Git / CI/CD</span>
-                        </div>
-                    </div>
-
-                    <div class="section-block">
-                        <h3 class="section-heading"><i class="fas fa-graduation-cap"></i> Education</h3>
-                        <div class="timeline-entry">
-                            <div class="company" style="line-height: 1.3; margin-bottom: 0.5rem;">Bachelor of Technology in Computer Science and Engineering</div>
-                            <p class="description" style="margin-bottom: 0.5rem;">Mahatma Gandhi University, India</p>
-                            <p class="badge" style="display:inline-block; font-size: 0.75rem; white-space: normal; line-height: 1.4;">
-                                Evaluated as equivalent to a U.S. Bachelor of Science in Computer Engineering</p>
-                        </div>
-                    </div>
-
-                    <div class="section-block">
-                        <h3 class="section-heading"><i class="fas fa-award"></i> Memberships & Certs</h3>
-                        <div class="timeline-entry" style="margin-bottom: 1rem;">
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <strong style="color: var(--text-primary);">IEEE Senior Member</strong>
-                                <span class="badge">Elevated 2025</span>
-                            </div>
-                        </div>
-                        <ul class="simple-list">
-                            <li><strong>Oracle Certified Java Programmer (OCJP)</strong></li>
-                            <li><strong>Microsoft Certified Technology Specialist (MCTS)</strong></li>
-                            <li style="display:block; margin-top: 0.5rem;">
-                                <strong>FAA Trust Certificate</strong><br>
-                                <span style="font-size: 0.85rem; color: var(--text-secondary);">Aeronautical Knowledge Test Certificate for Recreational UAS Safety</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="section-block">
-                        <h3 class="section-heading"><i class="fas fa-heart"></i> Interests & Community</h3>
-                        <ul class="simple-list">
-                            <li style="display:block; margin-bottom: 0.8rem;">
-                                <strong style="color: var(--text-primary);">Community:</strong><br>
-                                Active member and volunteer of the Mountain House Association of Malayalis (MoHAM).
-                            </li>
-                            <li style="display:block; margin-bottom: 0.8rem;">
-                                <strong style="color: var(--text-primary);">Sports & Games:</strong><br>
-                                Competitive Badminton, Table Tennis, and Poker.
-                            </li>
-                            <li style="display:block; margin-bottom: 0.8rem;">
-                                <strong style="color: var(--text-primary);">Tech & AI:</strong><br>
-                                Experimenting with AI-assisted software design and development, and automotive technology ecosystems.
-                            </li>
-                            <li style="display:block;">
-                                <strong style="color: var(--text-primary);">Open Source & Web:</strong><br>
-                                Active Stack Overflow contributor (<a href="https://stackoverflow.com/users/1618885/eldhose-m-babu" style="color: var(--accent-primary); text-decoration: none;" target="_blank">Profile @eldhose-m-babu</a>) and working on an <a href="https://surviving-aphid-eldhose-81e6e10b.koyeb.app/" style="color: var(--accent-primary); text-decoration: none;" target="_blank">AI Auto Trader Web App</a>.
-                            </li>
-                        </ul>
-                    </div>
-                </aside>
-            </div>
-        </article>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Eldhose Mathokkil Babu. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <!-- Marked Markdown Parser CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="aboutme.js"></script>
 </body>
 
 </html>

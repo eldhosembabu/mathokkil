@@ -32,7 +32,7 @@ Innovative **Senior Software Engineer / Android Platform Specialist** with over 
 ## Professional Experience
 
 ### **Google LLC** | Mountain View / Sunnyvale, CA
-**Senior Software Engineer / Android SDK Specialist** | *June 2019 – Present*
+**Senior Software Engineer** | *June 2019 – Present*
 * **Firebase SDKs:** Owned the design, feature development, performance optimization, and maintenance of Firebase Messaging, Firebase Dynamic Links, and Firebase In-App Messaging SDKs, directly supporting millions of applications globally.
 * **Google Play Services:** Engineered and maintained multiple client modules within Google Play Services required for supporting Firebase Dynamic Links and Firebase Messaging products, coordinating phased rollouts to ensure stability across billions of Android devices.
 * **Generative AI Tooling:** Extensive experience in using gen AI tools in development, triaging, document generation etc. Have experience in integrating AI Agents to our daily workflows like email triaging, calendar management, bug triaging etc.

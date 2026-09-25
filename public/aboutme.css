@@ -40,16 +40,16 @@
 
 /* Light Theme Variables */
 :root[data-theme="light"] {
-  --bg-color: #f1f5f9;
-  --bg-card: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(203, 213, 225, 0.5);
+  --bg-color: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --border-color: rgba(203, 213, 225, 0.7);
   --text-main: #0f172a;
   --text-muted: #475569;
   --text-inverse: #ffffff;
-  --shadow-sm: 0 2px 8px rgba(110, 130, 112, 0.08);
-  --shadow-md: 0 8px 30px rgba(110, 130, 112, 0.12);
-  --orb-opacity: 0.4;
-  --glass-blur: 15px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --orb-opacity: 0.35;
+  --glass-blur: 16px;
   --scrollbar-thumb: #cbd5e1;
   --scrollbar-track: #f8fafc;
 }
@@ -57,14 +57,14 @@
 /* Dark Theme Variables */
 :root[data-theme="dark"] {
   --bg-color: #0c0c0d;
-  --bg-card: rgba(17, 17, 19, 0.75);
+  --bg-card: rgba(17, 17, 19, 0.78);
   --border-color: rgba(255, 255, 255, 0.08);
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --text-inverse: #060a07;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
-  --orb-opacity: 0.2;
+  --orb-opacity: 0.18;
   --glass-blur: 20px;
   --scrollbar-thumb: #1e1e24;
   --scrollbar-track: #09090b;

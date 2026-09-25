@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg+xml" href="logo.svg">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <meta name="color-scheme" content="light dark">
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('color-scheme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.setAttribute('data-theme', savedTheme || (prefersDark ? 'dark' : 'light'));
+        })();
+    </script>
     <style>
         /* Custom styles for the landing page that sit on top of style.css */
         .landing-container {
@@ -20,6 +28,14 @@
             align-items: center;
             justify-content: center;
             padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .home-theme-toggle {
+            position: fixed;
+            top: 1.5rem;
+            right: 2rem;
+            z-index: 100;
         }
 
         .landing-card {
@@ -36,10 +52,14 @@
         }
 
         .hero-logo-img {
-            width: 72px;
-            height: 72px;
-            filter: grayscale(1) brightness(2);
-            opacity: 0.9;
+            width: 76px;
+            height: 76px;
+            filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.4));
+            transition: transform 0.4s ease;
+        }
+
+        .hero-logo-img:hover {
+            transform: rotate(8deg) scale(1.08);
         }
 
         .landing-title {
@@ -85,11 +105,11 @@
         }
 
         .menu-btn:hover {
-            background: #fff;
-            color: #000;
+            background: var(--btn-primary-bg);
+            color: var(--btn-primary-text);
             transform: translateY(-4px);
-            border-color: #fff;
-            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.4);
+            border-color: var(--btn-primary-bg);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.35);
         }
 
         .menu-btn i {
@@ -112,8 +132,8 @@
         }
 
         .social-icon:hover {
-            color: #fff;
-            transform: scale(1.1);
+            color: var(--accent-primary);
+            transform: scale(1.15);
         }
 
         /* Responsive Styles */
@@ -139,15 +159,27 @@
                 width: 100%;
                 justify-content: center;
             }
+
+            .home-theme-toggle {
+                top: 1rem;
+                right: 1rem;
+            }
         }
     </style>
 
 </head>
 
 <body>
-    <div class="background-globes">
+    <div class="home-theme-toggle">
+        <button class="theme-toggle-btn" type="button" aria-label="Toggle theme mode">
+            <i class="fas fa-sun"></i>
+            <span class="theme-text">Light</span>
+        </button>
+    </div>
+    <div class="background-globes" aria-hidden="true">
         <div class="globe globe-1"></div>
         <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
     </div>
     <main class="landing-container">
         <article class="glass-card landing-card fade-in">
@@ -162,7 +194,8 @@
                 integrating AI innovations,
                 and mentoring the next generation of engineers. </p>
             <nav class="menu-grid"><a href="aboutme.html" class="menu-btn"><span>About Me</span><i
-                        class="fas fa-user"></i></a><a href="https://github.com/eldhosembabu" class="menu-btn"
+                        class="fas fa-user"></i></a><a href="highlights.html" class="menu-btn"><span>Highlights</span><i
+                        class="fas fa-star"></i></a><a href="https://github.com/eldhosembabu" class="menu-btn"
                     target="_blank"><span>Github</span><i class="fab fa-github"></i></a><a href="apps.html"
                     class="menu-btn"><span>Apps</span><i class="fas fa-mobile-alt"></i></a><a href="articles/"
                     class="menu-btn"><span>Articles</span><i class="fas fa-newspaper"></i></a><a

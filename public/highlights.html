@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Highlights | Eldhose Mathokkil Babu</title>
+  <meta name="description"
+    content="Explore technical highlights and engineering milestones by Eldhose Mathokkil Babu — Android OS, Jetpack Compose, iOS, Generative AI, and Google-scale systems.">
+  <meta name="color-scheme" content="light dark">
+
+  <!-- Google Fonts: Outfit (headings) & Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="stylesheet" href="style.css?v=2.2">
+  <link rel="stylesheet" href="highlights.css?v=2.2">
+
+  <!-- Prevent FOUC Theme Script -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('color-scheme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- Ambient floating globes background -->
+  <div class="background-globes" aria-hidden="true">
+    <div class="globe globe-1"></div>
+    <div class="globe globe-2"></div>
+    <div class="globe globe-3"></div>
+  </div>
+
+  <!-- Top Glass Navigation -->
+  <nav class="glass-nav" aria-label="Main Navigation">
+    <a href="/" class="logo" id="nav-brand-link">
+      <img src="logo.svg" alt="Mathokkil Logo" class="nav-logo-img">
+      <span>Mathokkil</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="/" class="nav-link" id="nav-home">
+        <i class="fas fa-home"></i>
+        <span class="nav-link-text">Home</span>
+      </a>
+      <a href="aboutme.html" class="nav-link" id="nav-aboutme">
+        <i class="fas fa-user"></i>
+        <span class="nav-link-text">About</span>
+      </a>
+      <a href="highlights.html" class="nav-link active" id="nav-highlights" aria-current="page">
+        <i class="fas fa-star"></i>
+        <span class="nav-link-text">Highlights</span>
+      </a>
+      <a href="apps.html" class="nav-link" id="nav-apps">
+        <i class="fas fa-mobile-screen-button"></i>
+        <span class="nav-link-text">Apps</span>
+      </a>
+      <a href="articles/" class="nav-link" id="nav-articles">
+        <i class="fas fa-newspaper"></i>
+        <span class="nav-link-text">Articles</span>
+      </a>
+      <a href="contributions.html" class="nav-link" id="nav-contributions">
+        <i class="fas fa-hand-holding-heart"></i>
+        <span class="nav-link-text">Contributions</span>
+      </a>
+      <button id="theme-toggle-btn" class="theme-toggle-btn" type="button" aria-label="Toggle theme mode">
+        <i class="fas fa-sun" id="theme-icon"></i>
+        <span id="theme-label" class="theme-text">Light</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="highlights-container">
+    <!-- Hero Section -->
+    <header class="hero-section fade-in-up">
+      <div class="hero-badge">
+        <i class="fas fa-bolt"></i>
+        <span>Engineering Showcase & Milestones</span>
+      </div>
+      <h1 class="hero-title">Technical Highlights</h1>
+      <p class="hero-description">
+        A curated showcase of flagship applications, open-source SDKs, AI integrations, Google-scale infrastructure
+        initiatives, and community leadership led by Eldhose Mathokkil Babu.
+      </p>
+
+      <!-- Key Metrics Ribbon -->
+      <div class="metrics-ribbon" role="region" aria-label="Quick Highlights Statistics">
+        <div class="metric-card">
+          <div class="metric-number">11</div>
+          <div class="metric-label">Key Milestones</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">4</div>
+          <div class="metric-label">Core Domains</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">3B+</div>
+          <div class="metric-label">Devices Reached</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">IEEE</div>
+          <div class="metric-label">Senior Member</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Search & Category Filters -->
+    <section class="controls-bar" aria-label="Search and Filter Highlights">
+      <div class="search-wrapper">
+        <i class="fas fa-search search-icon" aria-hidden="true"></i>
+        <input type="text" id="highlight-search" class="search-input"
+          placeholder="Search highlights by title, technology, or description... (Press '/' to focus)"
+          aria-label="Search highlights">
+        <button id="search-clear-btn" class="search-clear-btn" type="button" aria-label="Clear search query">
+          <i class="fas fa-times-circle"></i>
+        </button>
+      </div>
+
+      <nav class="category-filter-bar" aria-label="Category Filters">
+        <button class="filter-btn active" data-filter="all" id="filter-all" type="button">
+          <i class="fas fa-layer-group"></i> All Highlights <span class="filter-count">11</span>
+        </button>
+        <button class="filter-btn" data-filter="Android" id="filter-android" type="button">
+          <i class="fab fa-android"></i> Android <span class="filter-count">5</span>
+        </button>
+        <button class="filter-btn" data-filter="iOS" id="filter-ios" type="button">
+          <i class="fab fa-apple"></i> iOS <span class="filter-count">1</span>
+        </button>
+        <button class="filter-btn" data-filter="Web" id="filter-web" type="button">
+          <i class="fas fa-globe"></i> Web & AI <span class="filter-count">2</span>
+        </button>
+        <button class="filter-btn" data-filter="Public Profiles/Mentions/Contributions" id="filter-contributions"
+          type="button">
+          <i class="fas fa-award"></i> Public & Community <span class="filter-count">3</span>
+        </button>
+      </nav>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- CATEGORY 1: ANDROID -->
+    <!-- ========================================== -->
+    <section class="highlights-section" data-category="Android" id="section-android">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-icon-box android">
+            <i class="fab fa-android"></i>
+          </div>
+          <h2 class="section-title">Android Engineering</h2>
+        </div>
+        <span class="section-count-badge">5 Highlights</span>
+      </div>
+
+      <div class="highlights-grid">
+        <!-- Highlight: Who is EL? -->
+        <article class="highlight-card" data-category="Android"
+          data-tags="android jetpack compose material 3 clean architecture kotlin coroutines flow hilt coil 3 reactive ui resume"
+          id="highlight-who-is-el">
+          <div>
+            <div class="card-top">
+              <div class="badge-group">
+                <span class="category-tag android">Android</span>
+                <span class="status-badge live">Native App</span>
+              </div>
+              <div class="card-icon">
+                <i class="fas fa-id-badge"></i>
+              </div>
+            </div>
+            <h3 class="card-title">Who is EL?</h3>
+            <p class="card-subtitle">Android app to tell about myself!</p>
+            <p class="card-description">
+              WhoIsEL is an interactive resume app showcasing Eldhose's engineering career and projects. Built with 100%
+              Jetpack Compose and Material 3, the app leverages Clean Architecture, Kotlin Coroutines, Flow, Hilt for
+              dependency injection, and Coil 3 for reactive, high-performance UI rendering.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Jetpack Compose</span>
+              <span class="tech-tag">Material 3</span>
+              <span class="tech-tag">Clean Architecture</span>
+              <span class="tech-tag">Kotlin Coroutines</span>
+              <span class="tech-tag">Flow</span>
+              <span class="tech-tag">Hilt DI</span>
+              <span class="tech-tag">Coil 3</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <span class="card-internal-badge">
+              <i class="fas fa-check-circle" style="color: var(--accent-android);"></i> 100% Compose
+            </span>
+            <a href="aboutme.html" class="action-btn ghost" id="btn-whoisel-details">
+              <span>View Profile</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Highlight: Poker Advisor -->
+        <article class="highlight-card" data-category="Android"
+          data-tags="android gemini api ai artificial intelligence poker challenges advice jetpack compose material 3 clean architecture kotlin room database"
+          id="highlight-poker-advisor">
+          <div>
+            <div class="card-top">
+              <div class="badge-group">
+                <span class="category-tag android">Android</span>
+                <span class="status-badge live">AI Powered</span>
+              </div>
+              <div class="card-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+            </div>
+            <h3 class="card-title">Poker Advisor</h3>
+            <p class="card-subtitle">Provides poker challenges and advice to poker players</p>
+            <p class="card-description">
+              Powered by the Gemini API, Poker Advisor generates and evaluates situational poker challenges to elevate
+              player decision-making. Built with Jetpack Compose, Material 3, Clean Architecture, Kotlin Coroutines, and
+              Room, this native Android app offers a responsive, AI-driven poker training platform.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Gemini API</span>
+              <span class="tech-tag">GenAI</span>
+              <span class="tech-tag">Jetpack Compose</span>
+              <span class="tech-tag">Material 3</span>
+              <span class="tech-tag">Room DB</span>
+              <span class="tech-tag">Coroutines</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <span class="card-internal-badge">
+              <i class="fas fa-wand-magic-sparkles" style="color: #a855f7;"></i> Gemini AI Integration
+            </span>
+            <span class="card-status-pill">
+              <i class="fab fa-android"></i> Android + AI
+            </span>
+          </div>
+        </article>
+
+        <!-- Highlight: Auto Bluetooth Connector -->
+        <article class="highlight-card" data-category="Android"
+          data-tags="android auto bluetooth connector activity detection sdk driving walking background services automation play store"
+          id="highlight-auto-bluetooth">
+          <div>
+            <div class="card-top">
+              <div class="badge-group">
+                <span class="category-tag android">Android</span>
+                <span class="status-badge archive">Legacy Project</span>
+              </div>
+              <div class="card-icon">
+                <i class="fab fa-bluetooth-b"></i>
+              </div>
+            </div>
+            <h3 class="card-title">Auto Bluetooth Connector</h3>
+            <p class="card-subtitle">To auto connect with bluetooth device of choice while driving is detected</p>
+            <p class="card-description">
+              The app makes use of Google's activity detection SDK to figure out the user's activity like Driving,
+              Walking, etc., and if Driving is recognized, the app automatically connects the device's Bluetooth to the
+              preferred target device.
+            </p>
+            <div class="notice-box">
+              <i class="fas fa-info-circle"></i>
+              <span>Removed from Google Play Store due to lack of app updates.</span>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">Activity Recognition SDK</span>
+              <span class="tech-tag">Bluetooth API</span>
+              <span class="tech-tag">Android Services</span>
+              <span class="tech-tag">Contextual Automation</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <span class="card-internal-badge">
+              <i class="fas fa-car" style="color: var(--accent-android);"></i> Driving Detection
+            </span>
+            <span class="card-status-pill archive">
+              <i class="fas fa-box-archive"></i> Archived
+            </span>
+          </div>
+        </article>
+
+        <!-- Highlight: Eye Challenger -->
+        <article class="highlight-card" data-category="Android"
+          data-tags="eye challenger android game eye challenge odd one out multi device bluetooth p2p multiplayer play store"
+          id="highlight-eye-challenger">
+          <div>
+            <div class="card-top">
+              <div class="badge-group">
+                <span class="category-tag android">Android</span>
+                <span class="status-badge archive">Legacy Project</span>
+              </div>
+              <div class="card-icon">
+                <i class="fas fa-eye"></i>
+              </div>
+            </div>
+            <h3 class="card-title">Eye Challenger</h3>
+            <p class="card-subtitle">A simple android game to challenge the user's eye</p>
+            <p class="card-description">
+              A simple game to find the odd one out from a group of visual entries. Built with native Android UI, this
+              game notably supports real-time multi-device gameplay between users over local Bluetooth peer-to-peer
+              networking.
+            </p>
+            <div class="notice-box">
+              <i class="fas fa-info-circle"></i>
+              <span>Removed from Google Play Store due to lack of app updates.</span>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">Android Game</span>
+              <span class="tech-tag">Bluetooth P2P</span>
+              <span class="tech-tag">Multiplayer</span>
+              <span class="tech-tag">Custom Canvas</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <span class="card-internal-badge">
+              <i class="fas fa-gamepad" style="color: var(--accent-android);"></i> Multiplayer Game
+            </span>
+            <span class="card-status-pill archive">
+              <i class="fas fa-box-archive"></i> Archived
+            </span>
+          </div>
+        </article>
+
+        <!-- Highlight: ABC SDK -->
+        <article class="highlight-card" data-category="Android"
+          data-tags="abc sdk android badge count maven gradle plugin packagemanager activity-aliases adaptive icons open source library"
+          id="highlight-abc-sdk">
+          <div>
+            <div class="card-top">
+              <div class="badge-group">
+                <span class="category-tag android">Android</span>
+                <span class="status-badge article">Published SDK</span>
+              </div>
+              <div class="card-icon">
+                <i class="fas fa-cube"></i>
+              </div>
+            </div>
+            <h3 class="card-title">ABC SDK</h3>
+            <p class="card-subtitle">An android SDK published in Maven which can be used to display badge count in apps</p>
+            <p class="card-description">
+              ABC SDK (Android Badge Count) enables dynamic notification badging on Android app icons. Featuring a custom
+              Gradle plugin, it generates badged adaptive icon layers at build time and leverages activity-aliases with
+              PackageManager at runtime to seamlessly swap launcher icons without breaking user experience.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Android SDK</span>
+              <span class="tech-tag">Maven Central</span>
+              <span class="tech-tag">Gradle Plugin</span>
+              <span class="tech-tag">PackageManager</span>
+              <span class="tech-tag">Activity Aliases</span>
+              <span class="tech-tag">Adaptive Icons</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <span class="card-internal-badge">
+              <i class="fas fa-book-open" style="color: var(--brand-blue);"></i> Technical Deep Dive
+            </span>
+            <a href="articles/abc-sdk.html" class="action-btn primary" id="btn-abc-sdk-article">
+              <span>Read Article</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- CATEGORY 2: IOS -->
+    <!-- ========================================== -->
+    <section class="highlights-section" data-category="iOS" id="section-ios">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-icon-box ios">
+            <i class="fab fa-apple"></i>
+          </div>
+          <h2 class="section-title">iOS Engineering</h2>
+        </div>
+        <span class="section-count-badge">1 Highlight</span>
+      </div>
+
+      <div class="highlights-grid">
+        <!-- Highlight: The Poker Tracker -->
+        <article class="highlight-card" data-category="iOS"
+          data-tags="ios apple app store the poker tracker home poker games splitwise integration web interface game logs scores settle balances swift"
+          id="highlight-poker-tracker">
+          <div>
+            <div class="card-top">
+              <div class="badge-group">
+                <span class="category-tag ios">iOS</span>
+                <span class="status-badge live">App Store Live</span>
+              </div>
+              <div class="card-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+            </div>
+            <h3 class="card-title">The Poker Tracker</h3>
+            <p class="card-subtitle">To track home poker games and enter the winnings to split wise</p>
+            <p class="card-description">
+              The Poker Tracker is a utility designed to simplify home poker games by replacing pen and paper. It lets
+              you manage players, track scores and game logs, share real-time updates via a web interface, and easily
+              settle balances with built-in Splitwise integration.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">iOS Native</span>
+              <span class="tech-tag">Swift</span>
+              <span class="tech-tag">Splitwise Integration</span>
+              <span class="tech-tag">Real-Time Web Sync</span>
+              <span class="tech-tag">Game Ledger</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <span class="card-internal-badge">
+              <i class="fab fa-apple" style="color: var(--brand-blue);"></i> Available on App Store
+            </span>
+            <a href="https://apps.apple.com/us/app/the-poker-tracker/id6752974348" target="_blank" rel="noopener noreferrer"
+              class="action-btn primary" id="btn-poker-tracker-appstore">
+              <span>View on App Store</span>
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- CATEGORY 3: WEB & AI -->
+    <!-- ========================================== -->
+    <section class="highlights-section" data-category="Web" id="section-web">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-icon-box web">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h2 class="section-title">Web & AI Engineering</h2>
+        </div>
+        <span class="section-count-badge">2 Highlights</span>
+      </div>
+
+      <div class="highlights-grid">
+        <!-- Highlight: Auto Trader -->
+        <article class="highlight-card" data-category="Web"
+          data-tags="web auto trader leverages ai trade stocks generative ai models financial indicators market sentiment predictive modeling automated execution koyeb"
+          id="highlight-auto-trader">
+          <div>
+            <div class="card-top">
+              <div class="badge-group">
+                <span class="category-tag web">Web & AI</span>
+                <span class="status-badge live">Live App</span>
+              </div>
+              <div class="card-icon">
+                <i class="fas fa-arrow-trend-up"></i>
+              </div>
+            </div>
+            <h3 class="card-title">Auto Trader</h3>
+            <p class="card-subtitle">Leverages AI to trade stocks</p>
+            <p class="card-description">
+              Auto Trader is an automated trading application that integrates Generative AI models to evaluate technical
+              and financial indicators. The platform leverages AI-driven market sentiment and predictive modeling to
+              automate trade execution strategies with real-time risk and portfolio management.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Generative AI</span>
+              <span class="tech-tag">FinTech</span>
+              <span class="tech-tag">Predictive Modeling</span>
+              <span class="tech-tag">Market Sentiment</span>
+              <span class="tech-tag">Automated Execution</span>
+              <span class="tech-tag">Risk Management</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <span class="card-internal-badge">
+              <i class="fas fa-cloud" style="color: var(--accent-web);"></i> Deployed on Koyeb
+            </span>
+            <a href="https://surviving-aphid-eldhose-81e6e10b.koyeb.app/" target="_blank" rel="noopener noreferrer"
+              class="action-btn primary" id="btn-auto-trader-launch">
+              <span>Launch App</span>
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Highlight: White Elephant -->
+        <article class="highlight-card" data-category="Web"
+          data-tags="web white elephant web app gift exchange holiday next.js nextjs firebase hosting real-time timers randomized ordering rule enforcement"
+          id="highlight-white-elephant">
+          <div>
+            <div class="card-top">
+              <div class="badge-group">
+                <span class="category-tag web">Web & AI</span>
+                <span class="status-badge live">Live App</span>
+              </div>
+              <div class="card-icon">
+                <i class="fas fa-gifts"></i>
+              </div>
+            </div>
+            <h3 class="card-title">White Elephant</h3>
+            <p class="card-subtitle">Web App to facilitate White Elephant Game</p>
+            <p class="card-description">
+              White Elephant is an interactive web application designed to seamlessly coordinate holiday gift exchanges.
+              Built with modern Next.js and deployed on Firebase Hosting, it automates player registration, randomized
+              turn ordering, turn timers, and dynamic gift-stealing rule enforcement.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">Firebase Hosting</span>
+              <span class="tech-tag">Real-Time State</span>
+              <span class="tech-tag">Turn Timers</span>
+              <span class="tech-tag">Interactive Game Engine</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <span class="card-internal-badge">
+              <i class="fas fa-fire" style="color: #f59e0b;"></i> Firebase Hosted
+            </span>
+            <a href="https://white-elephant-ed2b4.web.app/" target="_blank" rel="noopener noreferrer"
+              class="action-btn primary" id="btn-white-elephant-launch">
+              <span>Launch App</span>
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- CATEGORY 4: PUBLIC PROFILES / MENTIONS / CONTRIBUTIONS -->
+    <!-- ========================================== -->
+    <section class="highlights-section" data-category="Public Profiles/Mentions/Contributions" id="section-contributions">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-icon-box impact">
+            <i class="fas fa-award"></i>
+          </div>
+          <h2 class="section-title">Public Profiles, Mentions & Scale Impact</h2>
+        </div>
+        <span class="section-count-badge">3 Highlights</span>
+      </div>
+
+      <div class="highlights-grid">
+        <!-- Highlight: Goo.gl Shutdown -->
+        <article class="highlight-card" data-category="Public Profiles/Mentions/Contributions"
+          data-tags="goo.gl shutdown google url shortener decommissioning traffic analysis deprecation strategy developers redirect warnings global infrastructure scale"
+          id="highlight-googl-shutdown">
+          <div>
+            <div class="card-top">
+              <div class="badge-group">
+                <span class="category-tag impact">Infrastructure</span>
+                <span class="status-badge article">Google Developers</span>
+              </div>
+              <div class="card-icon">
+                <i class="fab fa-google"></i>
+              </div>
+            </div>
+            <h3 class="card-title">Goo.gl Shutdown</h3>
+            <p class="card-subtitle">Google goo.gl Short URL Service shutdown</p>
+            <p class="card-description">
+              Led the global decommissioning of Google URL Shortener (goo.gl); conducted deep traffic analysis and
+              architected a phased deprecation strategy that served progressive interstitial redirect warnings to notify
+              downstream developers and ensure zero abrupt disruptions across billions of links.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Google Infrastructure</span>
+              <span class="tech-tag">Global Scale</span>
+              <span class="tech-tag">Traffic Analysis</span>
+              <span class="tech-tag">Service Deprecation</span>
+              <span class="tech-tag">Interstitial Warnings</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <span class="card-internal-badge">
+              <i class="fas fa-newspaper" style="color: var(--brand-blue);"></i> Official Google Announcement
+            </span>
+            <a href="https://developers.googleblog.com/en/google-url-shortener-links-will-no-longer-be-available/"
+              target="_blank" rel="noopener noreferrer" class="action-btn primary" id="btn-googl-announcement">
+              <span>Read Announcement</span>
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Highlight: Stack Overflow -->
+        <article class="highlight-card" data-category="Public Profiles/Mentions/Contributions"
+          data-tags="stack overflow community contributions pre-ai era android knowledge sharing answers reputation top contributor"
+          id="highlight-stackoverflow">
+          <div>
+            <div class="card-top">
+              <div class="badge-group">
+                <span class="category-tag impact">Community</span>
+                <span class="status-badge award">Top Contributor</span>
+              </div>
+              <div class="card-icon">
+                <i class="fab fa-stack-overflow"></i>
+              </div>
+            </div>
+            <h3 class="card-title">Stack Overflow</h3>
+            <p class="card-subtitle">Stack overflow community contributions</p>
+            <p class="card-description">
+              Extensive community contributions and technical solutions provided to the global developer community on
+              Stack Overflow, solving critical Android and system engineering challenges during the Pre-AI Era.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Stack Overflow</span>
+              <span class="tech-tag">Pre-AI Era</span>
+              <span class="tech-tag">Community Mentorship</span>
+              <span class="tech-tag">Android Q&A</span>
+              <span class="tech-tag">Peer-Reviewed Solutions</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <span class="card-internal-badge">
+              <i class="fab fa-stack-overflow" style="color: #f48225;"></i> Developer Profile
+            </span>
+            <a href="https://stackoverflow.com/users/1618885/eldhose-m-babu" target="_blank" rel="noopener noreferrer"
+              class="action-btn primary" id="btn-stackoverflow-profile">
+              <span>View Profile</span>
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Highlight: IEEE Senior Member -->
+        <article class="highlight-card" data-category="Public Profiles/Mentions/Contributions"
+          data-tags="ieee senior member 2025 onwards honors elevation professional distinction top 10 percent institute of electrical and electronics engineers"
+          id="highlight-ieee">
+          <div>
+            <div class="card-top">
+              <div class="badge-group">
+                <span class="category-tag impact">Distinction</span>
+                <span class="status-badge award">Honors</span>
+              </div>
+              <div class="card-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+            </div>
+            <h3 class="card-title">IEEE Senior Member</h3>
+            <p class="card-subtitle">IEEE Senior Member (2025 onwards)</p>
+            <p class="card-description">
+              Elevated to IEEE Senior membership in 2025. Senior member is the highest professional grade of IEEE for
+              which application may be made, requiring significant performance and reflecting professional maturity
+              achieved by fewer than 10% of IEEE members worldwide.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">IEEE Senior Member</span>
+              <span class="tech-tag">Professional Distinction</span>
+              <span class="tech-tag">Peer Recognized</span>
+              <span class="tech-tag">Technical Leadership</span>
+            </div>
+          </div>
+          <div class="card-action">
+            <span class="card-internal-badge">
+              <i class="fas fa-certificate" style="color: var(--accent-impact);"></i> Highest Professional Application Grade
+            </span>
+            <a href="aboutme.html" class="action-btn ghost" id="btn-ieee-credentials">
+              <span>View Credentials</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Empty Search State -->
+    <div class="empty-state" id="empty-state" role="status" aria-live="polite">
+      <div class="empty-icon">
+        <i class="fas fa-search-minus"></i>
+      </div>
+      <h3 class="empty-title">No highlights match your search</h3>
+      <p class="empty-description">Try adjusting your search terms or selecting a different category filter above.</p>
+      <button class="action-btn primary" id="reset-filters-btn" type="button">
+        <i class="fas fa-rotate-left"></i>
+        <span>Reset Filters</span>
+      </button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="highlights-footer">
+    <nav class="footer-nav" aria-label="Footer Navigation">
+      <a href="/" class="footer-link">Home</a>
+      <a href="aboutme.html" class="footer-link">About Me</a>
+      <a href="highlights.html" class="footer-link">Tech Highlights</a>
+      <a href="apps.html" class="footer-link">Apps</a>
+      <a href="articles/" class="footer-link">Articles</a>
+      <a href="contributions.html" class="footer-link">Contributions</a>
+      <a href="https://linkedin.com/in/eldhosembabu" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+      <a href="https://github.com/eldhosembabu" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+    </nav>
+    <p>&copy; 2026 Eldhose Mathokkil Babu. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js?v=2.2"></script>
+  <script src="highlights.js?v=2.2"></script>
+</body>
+
+</html>

@@ -12,26 +12,39 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg+xml" href="logo.svg">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <meta name="color-scheme" content="light dark">
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('color-scheme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.setAttribute('data-theme', savedTheme || (prefersDark ? 'dark' : 'light'));
+        })();
+    </script>
 </head>
 
 <body>
-    <div class="background-globes">
+    <div class="background-globes" aria-hidden="true">
         <div class="globe globe-1"></div>
         <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
     </div>
 
-    <!-- Floating Nav for Quick Actions -->
-    <nav class="glass-nav compact">
-        <div class="logo">
-            <a href="/"
-                style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.75rem;">
-                <img src="logo.svg" alt="Mathokkil Logo" class="nav-logo-img">
-                <span>Mathokkil</span>
-            </a>
-        </div>
-        <div class="nav-actions">
-            <a href="/" class="btn secondary"><i class="fas fa-home"></i> Home</a>
-            <a href="https://www.linkedin.com/in/eldhosembabu" class="btn primary">Contact Me</a>
+    <nav class="glass-nav" aria-label="Main Navigation">
+        <a href="/" class="logo">
+            <img src="logo.svg" alt="Mathokkil Logo" class="nav-logo-img">
+            <span>Mathokkil</span>
+        </a>
+        <div class="nav-links">
+            <a href="/" class="nav-link"><i class="fas fa-home"></i> <span class="nav-link-text">Home</span></a>
+            <a href="aboutme.html" class="nav-link"><i class="fas fa-user"></i> <span class="nav-link-text">About</span></a>
+            <a href="highlights.html" class="nav-link"><i class="fas fa-star"></i> <span class="nav-link-text">Highlights</span></a>
+            <a href="apps.html" class="nav-link active"><i class="fas fa-mobile-screen-button"></i> <span class="nav-link-text">Apps</span></a>
+            <a href="articles/" class="nav-link"><i class="fas fa-newspaper"></i> <span class="nav-link-text">Articles</span></a>
+            <a href="contributions.html" class="nav-link"><i class="fas fa-hand-holding-heart"></i> <span class="nav-link-text">Contributions</span></a>
+            <button class="theme-toggle-btn" type="button" aria-label="Toggle theme mode">
+                <i class="fas fa-sun"></i>
+                <span class="theme-text">Light</span>
+            </button>
         </div>
     </nav>
 
@@ -51,9 +64,13 @@
                 <section class="main-column" style="width: 100%;">
                     <div class="section-block">
                         <div class="timeline-entry">
-                            <div class="company">Coming Soon</div>
-                            <p class="description">This section is currently under construction. Please check back later
-                                for updates on my latest apps.</p>
+                            <div class="company">Featured Mobile & Web Apps</div>
+                            <p class="description">Explore detailed breakdowns, architecture stacks, and live links for all my Android, iOS, and Web applications on the Tech Highlights page.</p>
+                            <div style="margin-top: 1.5rem;">
+                                <a href="highlights.html" class="btn primary" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                                    <i class="fas fa-star"></i> Explore Tech Highlights
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>

@@ -12,6 +12,10 @@
         "destination": "/aboutme.html"
       },
       {
+        "source": "/highlights",
+        "destination": "/highlights.html"
+      },
+      {
         "source": "/apps",
         "destination": "/apps.html"
       },
